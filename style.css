@@ -402,6 +402,9 @@
 
 /* Smartphone Devices (max-width: 768px) */
 @media (max-width: 768px) {
+    body, html{
+        overflow-x: hidden;
+    }
     #minicircle{
         display: none;
     }
