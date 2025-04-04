@@ -23,11 +23,14 @@ document.querySelectorAll(".project-item").forEach((item) => {
     });
 });
 
-document.querySelectorAll(".toggle").forEach(toggle => {
-    toggle.addEventListener("click", function(){
-        document.querySelector(".links").style.display = document.querySelector(".links").style.display === "none" ? "flex" : "none";
-    });
-});
+function toggleClass(){
+
+    let elem = document.querySelector(".links")
+    if(elem){
+        elem.classList.toggle("hide")
+    }
+}
+
 
 function gsapAnime(){
     const tl = gsap.timeline()
@@ -40,6 +43,7 @@ function gsapAnime(){
     })
 
 }
+
 
 function firstPageAnimation(){
     var tl = gsap.timeline()
@@ -67,17 +71,26 @@ function firstPageAnimation(){
 }
 
 function circleMouseFollower(){
+
+
+   if(window.innerWidth > 768){
+
+   
     window.addEventListener("mousemove", function(dets){
-        // console.log(dets.clientX, dets.clientY);
+        console.log(dets.clientX, dets.clientY);
         document.querySelector("#minicircle").style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`
+
+        if(dets.clientY <= 5){
+            document.querySelector("#minicircle").style.display = "none"
+        }
+        else{
+            document.querySelector("#minicircle").style.display = "block"
+        }
+
     })   
 }
 
-// function circleChaptaKaro(){
-//     window.addEventListener('mousemove', function(dets){
-
-//     })  
-// }
+}
 
 
 
@@ -85,45 +98,5 @@ function circleMouseFollower(){
 gsapAnime()
 circleMouseFollower()
 firstPageAnimation()
+scrollMiniCircle()
 
-// document.querySelectorAll(".elem").forEach(function(elem){
-
-//     var rotate = 0
-//     var diffrot = 0
-
-//     elem.addEventListener('mousemove', function(dets){
-
-
-
-//         var diff = dets.clientY - elem.getBoundingClientRect().top
-//         diffrot = dets.clientY - rotate
-//         rotate = dets.clientX
-
-//         gsap.to(elem.querySelector("img"),{
-//             opacity: 1,
-//             ease: "power1",
-//             visibility: "visible",
-//             top: diff,
-//             left: dets.clientX,
-//             rotate: gsap.utils.clamp(-20,20,diffrot)
-
-         
-           
-//         });
-//     });
-
-
-//     elem.addEventListener('mouseleave', function(dets){
-
-
-
-//         var diff = dets.clientY - elem.getBoundingClientRect().top
-//         diffrot = dets.clientY - rotate
-//         rotate = dets.clientX
-
-//         gsap.to(elem.querySelector("img"),{
-//             opacity: 0,
-//             // top: -0
-//         });
-//     });
-// });

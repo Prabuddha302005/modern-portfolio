@@ -55,8 +55,34 @@
     align-items: center;
     justify-content: space-between;
     color: #fff;
+
 }
 #nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.links{
+
+    color: white;
+    width: 100%;
+    /* margin-top: 0; */
+    /* margin: auto; */
+    text-align: end;
+    padding-right: 30px;
+    display: grid;
+    position: absolute;
+
+}
+.links h3{
+      padding-top: 20px;
+      position: relative;
+    
+}
+.hide{
+    display: none;
+}
+.links a{
     color: white;
     text-decoration: none;
 }
@@ -408,20 +434,9 @@
     #minicircle{
         display: none;
     }
-    .links {
-        
-      
-        gap: 10px;
-       display: flex;
-       flex-direction: column;
-        width: 100%;
-        margin-top: 50px;
-        display: none;
-        align-items: center;
-        justify-content: center;
-      }
-      
 
+      
+    
     
     #heading h1 {
         font-size: 14vw;
@@ -494,6 +509,13 @@
     }
     #footerright {
         margin-top: 10px;
+        /* flex-direction: column; */
+      
+    }
+    #footerright a{
+        margin-top: 10px;
+        /* flex-direction: column; */
+        font-size: 3.5vw;
     }
     /* Project Cards adjustments */
     .projectcards {
